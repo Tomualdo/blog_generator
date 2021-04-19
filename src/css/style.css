@@ -171,9 +171,9 @@ samp {
     white-space : pre !important;
     background:#252727;
     color:#ffa64d;
-    margin:0 2px;
+  /*  margin:0 2px;*/
     border-radius: 5px;
-    padding: 3px;
+  /*  padding: 3px;*/
 
 }
 
