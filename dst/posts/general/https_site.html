@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+<title>Enable HTTPS on Apache with self-signed certificate &mdash; MyBlog</title>
+<meta property="og:title" content="Enable HTTPS" />
+      <meta property="og:description" content="Enable HTTPS on Apache with self-signed certificate" />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="/posts/general/https_site" />
+      <meta property="og:image" content="myURL" />
+
+</head>
+<pre style="font-family:monospace;color:#df6;text-align:center;font-weight:1000">
+                                                                       
+ _|_|_|_|_|                                              _|        _|  
+     _|      _|_|    _|_|_|  _|_|    _|    _|    _|_|_|  _|    _|_|_|  
+     _|    _|    _|  _|    _|    _|  _|    _|  _|    _|  _|  _|    _|  
+     _|    _|    _|  _|    _|    _|  _|    _|  _|    _|  _|  _|    _|  
+     _|      _|_|    _|    _|    _|    _|_|_|    _|_|_|  _|    _|_|_|  
+                                                                     
+                               </pre>
+
+
+<nav>
+   <a href="/index.html">home</a>
+   <a href="/archive.html">archive</a>
+   <a href="mailto:<tomuald@protonmail.com>">mail</a>
+<!--
+   <a href="<your github link here>">github</a>
+   <a href="twitter link here">twitter</a>
+   <a href="reddit link here">reddit</a>
+-->
+   <a href="/about.html">about me</a>
+</nav>
+
+<article>
+<h1 id="enable-https-on-apache-with-self-signed-certificate">Enable HTTPS on Apache with self-signed certificate</h1>
+<ul>
+<li>Install the Apache server and the required packages</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">apt-get</span> update</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">apt-get</span> install apache2 openssl</span></code></pre></div>
+<ul>
+<li>Enable Apache module named: <code>Mod_ssl</code> and <code>Mod_rewrite</code>.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">a2enmod</span> ssl</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a><span class="ex">a2enmod</span> rewrite</span></code></pre></div>
+<ul>
+<li>Edit the Apache configuration file.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="ex">vi</span> /etc/apache2/apache2.conf</span></code></pre></div>
+<ul>
+<li>Add the following lines at the end of this file.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="op">&lt;</span><span class="ex">Directory</span> /var/www/html<span class="op">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="ex">AllowOverride</span> All</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="op">&lt;</span>/<span class="ex">Directory</span><span class="op">&gt;</span></span></code></pre></div>
+<ul>
+<li>Create a private key and the website certificate using the OpenSSL command.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="fu">mkdir</span> /etc/apache2/certificate</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a><span class="bu">cd</span> /etc/apache2/certificate</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a><span class="ex">openssl</span> req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out apache-certificate.crt -keyout apache.key</span></code></pre></div>
+<ul>
+<li>Enter the requested information.</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="ex">Generating</span> a RSA private key</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true"></a><span class="ex">............++++</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true"></a><span class="ex">.......................................................++++</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true"></a><span class="ex">writing</span> new private key to <span class="st">&#39;apache.key&#39;</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true"></a><span class="ex">-----</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true"></a><span class="ex">You</span> are about to be asked to enter information that will be incorporated</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true"></a><span class="ex">into</span> your certificate request.</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true"></a><span class="ex">What</span> you are about to enter is what is called a Distinguished Name or a DN.</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true"></a><span class="ex">There</span> are quite a few fields but you can leave some blank</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true"></a><span class="ex">For</span> some fields there will be a default value,</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true"></a><span class="ex">If</span> you enter <span class="st">&#39;.&#39;</span>, the field will be left blank.</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true"></a><span class="ex">-----</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true"></a><span class="ex">Country</span> Name (2 letter code) [<span class="ex">AU</span>]:BR</span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true"></a><span class="ex">State</span> or Province Name (full name) [<span class="ex">Some-State</span>]:Rio de Janeiro</span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true"></a><span class="ex">Locality</span> Name (eg, city) []:</span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true"></a><span class="ex">Organization</span> Name (eg, company) [<span class="ex">Internet</span> Widgits Pty Ltd]:TechExpert</span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true"></a><span class="ex">Organizational</span> Unit Name (eg, section) []:</span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true"></a><span class="ex">Common</span> Name (e.g. server FQDN or YOUR name) []:<span class="ex">200.200.200.200</span></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true"></a><span class="ex">Email</span> Address []:</span></code></pre></div>
+<ul>
+<li><p>On the option named <code>COMMON_NAME</code>, you need to enter the IP <em>address</em> or <em>hostname</em>.</p></li>
+<li><p>In our example, we used the IP address 200.200.200.2000.</p></li>
+<li><p>Edit the Apache configuration file for the default website.</p></li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="ex">vi</span> /etc/apache2/sites-enabled/000-default.conf</span></code></pre></div>
+<ul>
+<li>Here is the file, before our configuration.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="op">&lt;</span><span class="ex">VirtualHost</span> *:<span class="op">80&gt;</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true"></a>        <span class="ex">ServerAdmin</span> webmaster@localhost</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true"></a>        <span class="ex">DocumentRoot</span> /var/www/html</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true"></a>        <span class="ex">ErrorLog</span> <span class="va">${APACHE_LOG_DIR}</span>/error.log</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true"></a>        <span class="ex">CustomLog</span> <span class="va">${APACHE_LOG_DIR}</span>/access.log combined</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true"></a><span class="op">&lt;</span>/<span class="ex">VirtualHost</span><span class="op">&gt;</span></span></code></pre></div>
+<ul>
+<li>Here is the file, after our configuration.</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="op">&lt;</span><span class="ex">VirtualHost</span> *:<span class="op">443&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true"></a>        <span class="ex">ServerAdmin</span> webmaster@localhost</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true"></a>        <span class="ex">DocumentRoot</span> /var/www/html</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true"></a>        <span class="ex">ErrorLog</span> <span class="va">${APACHE_LOG_DIR}</span>/error.log</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true"></a>        <span class="ex">CustomLog</span> <span class="va">${APACHE_LOG_DIR}</span>/access.log combined</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true"></a>        <span class="ex">SSLEngine</span> on</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true"></a>        <span class="ex">SSLCertificateFile</span> /etc/apache2/certificate/apache-certificate.crt</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true"></a>        <span class="ex">SSLCertificateKeyFile</span> /etc/apache2/certificate/apache.key</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true"></a><span class="op">&lt;</span>/<span class="ex">VirtualHost</span><span class="op">&gt;</span></span></code></pre></div>
+<ul>
+<li>Optionally, you may want to redirect HTTP users to the HTTPS version of your website.</li>
+<li>In this case, use the following configuration.</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="op">&lt;</span><span class="ex">VirtualHost</span> *:<span class="op">80&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true"></a>        <span class="ex">RewriteEngine</span> On</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true"></a>        <span class="ex">RewriteCond</span> %<span class="dt">{HTTPS}</span> !=on</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true"></a>        <span class="ex">RewriteRule</span> ^/?(.*) <span class="ex">https</span>://%<span class="dt">{SERVER_NAME}</span>/<span class="va">$1</span> [R=301,L]</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true"></a><span class="op">&lt;</span>/<span class="ex">virtualhost</span><span class="op">&gt;</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true"></a><span class="op">&lt;</span><span class="ex">VirtualHost</span> *:<span class="op">443&gt;</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true"></a>        <span class="ex">ServerAdmin</span> webmaster@localhost</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true"></a>        <span class="ex">DocumentRoot</span> /var/www/html</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true"></a>        <span class="ex">ErrorLog</span> <span class="va">${APACHE_LOG_DIR}</span>/error.log</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true"></a>        <span class="ex">CustomLog</span> <span class="va">${APACHE_LOG_DIR}</span>/access.log combined</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true"></a>        <span class="ex">SSLEngine</span> on</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true"></a>        <span class="ex">SSLCertificateFile</span> /etc/apache2/certificate/apache-certificate.crt</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true"></a>        <span class="ex">SSLCertificateKeyFile</span> /etc/apache2/certificate/apache.key</span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true"></a><span class="op">&lt;</span>/<span class="ex">VirtualHost</span><span class="op">&gt;</span></span></code></pre></div>
+<ul>
+<li>Restart the Apache service.</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="ex">service</span> apache2 restart</span></code></pre></div>
+<ul>
+<li>Open your browser and access the HTTPS version of your website.</li>
+<li>In our example, the following URL was entered in the Browser: • https://200.200.200.200</li>
+<li>The Apache server will display the HTTPS version of your website.</li>
+</ul>
+</article>
+
+<footer>
+  <hr>
+  <p> Generated with a modified version of <a href="https://github.com/fmash16/ssg5">ssg5</a> By fmash16 <br /> 
+  <i class="far fa-copyright"></i> 2020-2021 </p>
+</footer>
+</body>

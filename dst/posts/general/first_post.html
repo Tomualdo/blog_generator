@@ -42,32 +42,35 @@
 <p>Thanks To <a href="https://fmash16.github.io/content/posts/ssg5_site.html">fmash16</a> I’ve found this awesome static site generator.<br />
 This POSIX compliable shell script has been written by <a href="https://www.romanzolotarev.com/">Roman Zolotarev</a>. The documentation for this project can be found <a href="https://www.romanzolotarev.com/ssg.html">here</a></p>
 <h2 id="header-for-every-post">HEADER FOR EVERY POST</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><a class="sourceLine" id="cb1-1" title="1"><span class="ex">---</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="ex">title</span>: FirstPost</a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="ex">description</span>: Some description</a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="ex">date</span>: 2021-04-18</a>
-<a class="sourceLine" id="cb1-5" title="5"><span class="ex">tags</span>: tags here</a>
-<a class="sourceLine" id="cb1-6" title="6"><span class="ex">image</span>: </a>
-<a class="sourceLine" id="cb1-7" title="7"><span class="ex">---</span></a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a><span class="ex">title</span>: FirstPost</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a><span class="ex">description</span>: Some description</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true"></a><span class="ex">date</span>: 2021-04-18</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true"></a><span class="ex">tags</span>: tags here</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true"></a><span class="ex">image</span>: </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true"></a><span class="ex">---</span></span></code></pre></div>
 <p><img src="picture.jpg" id="picture" /></p>
 <h3 id="source-code-blocks">source code blocks</h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode json"><code class="sourceCode json"><a class="sourceLine" id="cb2-1" title="1"><span class="fu">{</span></a>
-<a class="sourceLine" id="cb2-2" title="2">  <span class="dt">&quot;firstName&quot;</span><span class="fu">:</span> <span class="st">&quot;John&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb2-3" title="3">  <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span> <span class="st">&quot;Smith&quot;</span><span class="fu">,</span></a>
-<a class="sourceLine" id="cb2-4" title="4">  <span class="dt">&quot;age&quot;</span><span class="fu">:</span> <span class="dv">25</span></a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="fu">}</span></a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode json"><code class="sourceCode json"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="fu">{</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true"></a>  <span class="dt">&quot;firstName&quot;</span><span class="fu">:</span> <span class="st">&quot;John&quot;</span><span class="fu">,</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true"></a>  <span class="dt">&quot;lastName&quot;</span><span class="fu">:</span> <span class="st">&quot;Smith&quot;</span><span class="fu">,</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true"></a>  <span class="dt">&quot;age&quot;</span><span class="fu">:</span> <span class="dv">25</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true"></a><span class="fu">}</span></span></code></pre></div>
 <dl>
 <dt>term</dt>
 <dd>definition
 </dd>
 </dl>
 <p><del>The world is flat.</del></p>
-<ul>
-<li>[x] Write the press release</li>
-<li>[ ] Update the website</li>
-<li>[ ] Contact the media</li>
+<ul class="task-list">
+<li><input type="checkbox" disabled="" checked="" />
+Write the press release</li>
+<li><input type="checkbox" disabled="" />
+Update the website</li>
+<li><input type="checkbox" disabled="" />
+Contact the media</li>
 </ul>
-<p>Here’s a sentence with a footnote. <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<p>Here’s a sentence with a footnote. <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <table>
 <thead>
 <tr class="header">
@@ -132,8 +135,8 @@ This POSIX compliable shell script has been written by <a href="https://www.roma
 <li>Unordered sub-list.</li>
 </ul>
 <ol type="1">
-<li>Actual numbers don’t matter, just that it’s a number</li>
-<li>Ordered sub-list</li>
+<li><p>Actual numbers don’t matter, just that it’s a number</p></li>
+<li><p>Ordered sub-list</p></li>
 <li><p>And another item.</p>
 <p>You can have properly indented paragraphs within list items. Notice the blank line above, and the leading spaces (at least one, but we’ll use three here to also align the raw Markdown).</p>
 <p>To have a line break without a paragraph, you will need to use two trailing spaces.<br />
@@ -145,10 +148,10 @@ Note that this line is separate, but within the same paragraph.<br />
 <li>Or minuses</li>
 <li>Or pluses</li>
 </ul>
-<section class="footnotes">
+<section class="footnotes" role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>This is the footnote.<a href="#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn1" role="doc-endnote"><p>This is the footnote.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 </article>
