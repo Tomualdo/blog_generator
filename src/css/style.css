@@ -8,7 +8,7 @@ html {
 body {
  /* font-family: 'IBM Plex Mono';*/
   font-family: monospace;
-  color: #e5d09a;
+  color: #ffcc48;
   background-color: #191a1a;
   font-size: 12px;
   line-height: 1.5em;
@@ -96,7 +96,7 @@ h4,
 h5,
 h6 {
   font-family: 'Courier Prime', monospace, sans-serif;
-  color: #fbf65b;
+  color: #f9595e;
   line-height: 1em;
 }
 
@@ -106,10 +106,10 @@ h1 > a {
 }
 
 h1::before {
-    content: "# "
+    content: " "
 }
 h2::before {
-    content: "## "
+    content: " "
 }
 
 h4,
@@ -378,7 +378,7 @@ nav {
 
 nav > a {
     all: unset;
-    color: #e5d09a;
+    color: #ffbdbd;
     text-decoration: underline;
 }
 
@@ -471,4 +471,10 @@ hr {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+#my_title {
+	font-family: monospace;
+	color :#ff006a;
+	text-align: center;
+	font-weight: 1000;
 }

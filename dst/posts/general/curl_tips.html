@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+<title>cURL - tips to remember &mdash; MyBlog</title>
+<meta property="og:title" content="cURL" />
+      <meta property="og:description" content="tips to remember" />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="/posts/general/curl_tips" />
+      <meta property="og:image" content="myURL" />
+
+</head>
+<pre id="my_title">
+                                                                       
+ _|_|_|_|_|                                              _|        _|  
+     _|      _|_|    _|_|_|  _|_|    _|    _|    _|_|_|  _|    _|_|_|  
+     _|    _|    _|  _|    _|    _|  _|    _|  _|    _|  _|  _|    _|  
+     _|    _|    _|  _|    _|    _|  _|    _|  _|    _|  _|  _|    _|  
+     _|      _|_|    _|    _|    _|    _|_|_|    _|_|_|  _|    _|_|_|  
+                                                                     
+                               </pre>
+
+
+<nav>
+   <a href="/index.html">home</a>
+   <a href="/archive.html">archive</a>
+   <a href="mailto:<tomuald@protonmail.com>">mail</a>
+<!--
+   <a href="<your github link here>">github</a>
+   <a href="twitter link here">twitter</a>
+   <a href="reddit link here">reddit</a>
+-->
+   <a href="/about.html">about me</a>
+</nav>
+
+<article>
+<h1 id="curl---tips-to-remember">cURL - tips to remember</h1>
+<p>Although cURL can be used with many different protocols, during its lifetime HTTP was one of the most frequently used ones. Here are some useful tips to remember.</p>
+<ol type="1">
+<li><p>Dont specify anything and just <code>GET</code> the page.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="ex">curl</span> http://example.com</span></code></pre></div></li>
+<li><p>Its too much, I just want the <code>HEAD</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a><span class="ex">curl</span> -I http://example.com</span></code></pre></div></li>
+<li><p>On the second hand, Ive decided to <code>POST</code> stuff.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="ex">curl</span> -d <span class="st">&#39;fname=jon&amp;lname=doe&#39;</span> http://example.com </span></code></pre></div></li>
+<li><p>Wait, wait, lets <code>PUT</code> those cards on table.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="ex">curl</span> -d <span class="st">&#39;fname= jonathan&#39;</span> -X PUT http://example.com</span></code></pre></div>
+<blockquote>
+<p>If you want to change methods use <code>-X</code> or <code>--request</code>, e.g. sending a <code>PUT</code> instead <code>POST</code>.</p>
+</blockquote></li>
+<li><p>On the other hand, Ive got a <code>file</code> for you.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="ex">curl</span> -T uploadme http://example.com</span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true"></a><span class="ex">curl</span> --data <span class="st">&#39;@uploadme&#39;</span> http://example.com/newfilename</span></code></pre></div>
+<p>or (to be fancier)</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true"></a><span class="fu">cat</span> uploadme <span class="kw">|</span> <span class="ex">curl</span> --data <span class="st">&#39;@-&#39;</span> http://example.com/newfilename</span></code></pre></div></li>
+<li><p>What if I need to pass a <code>custom HEADER</code>?</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true"></a><span class="ex">curl</span> -H <span class="st">&#39;X-First-Name: Jon&#39;</span> http://example.com</span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true"></a><span class="ex">curl</span> -d <span class="st">&#39;{json}&#39;</span> -H <span class="st">&#39;Content-Type: application/json&#39;</span> http://example.com</span></code></pre></div></li>
+<li><p>To specify <code>URL path</code>.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true"></a><span class="ex">curl</span> --path-as-is http://example.com/x/../y/</span></code></pre></div>
+<blockquote>
+<p>Dont squash sequences of /../ or /./ in the given URL path</p>
+</blockquote></li>
+<li><p>On some basic <code>login</code> use.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true"></a><span class="ex">curl</span> -u admin:secret http://example.com</span></code></pre></div>
+<blockquote>
+<p>Capital -U is used for <code>proxy</code> authentication.</p>
+</blockquote></li>
+<li><p>Getting some <code>Cookie</code>.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true"></a><span class="ex">curl</span> -c cookie.txt http://example.com</span></code></pre></div></li>
+<li><p>Getting some <code>Cookie</code> back.</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true"></a><span class="ex">curl</span> -b cookie.txt http://example.com</span></code></pre></div>
+<p>Tip Cookie file format <em>cURL uses a cookie format called <strong>Netscape</strong>, which each line is a single piece of information</em><br />
+<em>represented by following fields (read from left-to-right):</em></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">domain</th>
+<th style="text-align: center;">flag</th>
+<th style="text-align: center;">path</th>
+<th style="text-align: center;">secure</th>
+<th style="text-align: center;">expiration</th>
+<th style="text-align: center;">name</th>
+<th style="text-align: center;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">.netscape.com</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">TRUE / FALSE</td>
+<td style="text-align: center;">946684799</td>
+<td style="text-align: center;">NETSCAPE_ID</td>
+<td style="text-align: center;">100103</td>
+</tr>
+</tbody>
+</table></li>
+<li><p>Just <code>download</code> the file.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true"></a><span class="ex">curl</span> -o file http://example.com/file.html</span></code></pre></div>
+<blockquote>
+<p>The upper-case <code>-O</code> will create a file named like on the remote server.</p>
+</blockquote></li>
+<li><p>Fill the form and submit.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true"></a><span class="ex">curl</span> -F <span class="st">&#39;fname=john&#39;</span> -F <span class="st">&#39;lname=doe&#39;</span> http://example.com/form-submit</span></code></pre></div></li>
+<li><p>When you need <code>redirected</code>.</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true"></a><span class="ex">curl</span> -L http://example.com </span></code></pre></div></li>
+<li><p>Do you support HTTP/2 or HTTP/3?</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true"></a><span class="ex">curl</span> --http2 http://example.com</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true"></a><span class="ex">curl</span> --http3 https://example.com</span></code></pre></div>
+<blockquote>
+<p>HTTP/3 needs to be explicity enabled during build process. Please refer to this <a href="https://github.com/curl/curl/blob/master/docs/HTTP3.md">upgrade</a> guide if you want to play with it.</p>
+</blockquote></li>
+<li><p>Forgotten little gem.</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true"></a><span class="ex">curl</span> -w <span class="st">&#39;Type:%{content_type}\nCode:%{response_code}\n&#39;</span> -I -L https://google.com</span></code></pre></div>
+<blockquote>
+<p>Writes out information after transfer has completed by using a special %{variable}</p>
+</blockquote></li>
+</ol>
+<hr />
+<p>Tip (HTTP response Codes) : The first digit of a HTTP response defines the error group:</p>
+<ul>
+<li>1xx: informational</li>
+<li>2xx: success</li>
+<li>3xx: redirections</li>
+<li>4xx: client-side errors</li>
+<li>5xx: server-side errors</li>
+</ul>
+</article>
+
+<footer>
+  <hr>
+  <p> Generated with a modified version of <a href="https://github.com/fmash16/ssg5">ssg5</a> By fmash16 <br /> 
+  <i class="far fa-copyright"></i> 2020-2021 </p>
+</footer>
+</body>
