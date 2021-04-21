@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+<title>CSS CHEAT SHEET &mdash; MyBlog</title>
+<meta property="og:title" content="CSS Cheatsheet" />
+      <meta property="og:description" content="CSS is what makes a website unique" />
+      <meta property="og:type" content="article" />
+      <meta property="og:url" content="/posts/general/css_site" />
+      <meta property="og:image" content="myURL" />
+
+</head>
+<!--
+<pre id="my_title">
+                                                                       
+ _|_|_|_|_|                                              _|        _|  
+     _|      _|_|    _|_|_|  _|_|    _|    _|    _|_|_|  _|    _|_|_|  
+     _|    _|    _|  _|    _|    _|  _|    _|  _|    _|  _|  _|    _|  
+     _|    _|    _|  _|    _|    _|  _|    _|  _|    _|  _|  _|    _|  
+     _|      _|_|    _|    _|    _|    _|_|_|    _|_|_|  _|    _|_|_|  
+                                                                     
+                               </pre>
+-->
+
+<nav>
+   <a href="/index.html">home</a>
+   <a href="/archive.html">archive</a>
+   <a href="mailto:<tomuald@protonmail.com>">mail</a>
+<!--
+   <a href="<your github link here>">github</a>
+   <a href="twitter link here">twitter</a>
+   <a href="reddit link here">reddit</a>
+-->
+   <a href="/about.html">about me</a>
+</nav>
+
+<article>
+<h1 id="css-cheat-sheet">CSS CHEAT SHEET</h1>
+<p><a href="#backgrounds">Backgrounds</a><br />
+<a href="#border">Border</a><br />
+<a href="#box-model">Box Model</a><br />
+<a href="#font">Font</a><br />
+<a href="#text">Text</a><br />
+<a href="#column">Column</a><br />
+<a href="#colors">Colors</a><br />
+<a href="#table">Table</a><br />
+<a href="#speech">Speech</a><br />
+<a href="#list-markers">List &amp; Markers</a><br />
+<a href="#animations">Animations</a><br />
+<a href="#transitions">Transitions</a><br />
+<a href="#ui">UI</a><br />
+<a href="#pseudo-class">Pseudo-Class</a></p>
+<h2 id="backrounds">Backrounds</h2>
+<h3 id="background">background</h3>
+<ul>
+<li>background-image<br />
+</li>
+<li>background-position<br />
+</li>
+<li>background-size<br />
+</li>
+<li>background-repeat<br />
+</li>
+<li>background-attachment<br />
+</li>
+<li>background-origin<br />
+</li>
+<li>background-clip<br />
+</li>
+<li>background-color</li>
+</ul>
+<h3 id="background-image">background-image</h3>
+<ul>
+<li>url<br />
+</li>
+<li>gradients<br />
+</li>
+<li>none</li>
+</ul>
+<h3 id="background-position">background-position</h3>
+<ul>
+<li>top left | top center | top right | center left | center center |</li>
+<li>center right | bottom left | bottom center | bottom right<br />
+</li>
+<li>x-% y-%<br />
+</li>
+<li>x-pos y-pos</li>
+</ul>
+<h3 id="background-size">background-size</h3>
+<ul>
+<li>length<br />
+</li>
+<li>%<br />
+</li>
+<li>auto | cover | contain</li>
+</ul>
+<h3 id="background-repeat">background-repeat</h3>
+<ul>
+<li>repeat | repeat-x | repeat-y |<br />
+</li>
+<li>no-repeat</li>
+</ul>
+<h3 id="background-attachment">background-attachment</h3>
+<ul>
+<li>scroll | fixed | local</li>
+</ul>
+<h3 id="background-origin">background-origin</h3>
+<ul>
+<li>border-box | padding-box | content-box</li>
+</ul>
+<h3 id="background-clip">background-clip</h3>
+<ul>
+<li>border-box | padding-box | content-box</li>
+</ul>
+<h3 id="background-color">background-color</h3>
+<ul>
+<li>color</li>
+<li>transparent</li>
+</ul>
+<hr />
+<h2 id="border">Border <a href="#top">^</a></h2>
+<h3 id="border-1">border</h3>
+<ul>
+<li>border-width<br />
+</li>
+<li>border-style<br />
+</li>
+<li>border-color</li>
+</ul>
+<h3 id="border-width">border-width</h3>
+<ul>
+<li>thin | medium | thick | length</li>
+</ul>
+<h3 id="border-style">border-style</h3>
+<ul>
+<li>none | hidden | dotted |<br />
+</li>
+<li>dashed | solid | double |<br />
+</li>
+<li>groove | ridge | inset | outset</li>
+</ul>
+<h3 id="border-color">border-color</h3>
+<ul>
+<li>color</li>
+</ul>
+<h3 id="border-bottom">border-bottom</h3>
+<ul>
+<li>border-bottom-width<br />
+</li>
+<li>border-style<br />
+</li>
+<li>border-color</li>
+</ul>
+<h3 id="border-left">border-left</h3>
+<ul>
+<li>border-left-width<br />
+</li>
+<li>border-style<br />
+</li>
+<li>border-color</li>
+</ul>
+<h3 id="border-left-style">border-left-style</h3>
+<ul>
+<li>border-style</li>
+</ul>
+<h3 id="border-right-color">border-right-color</h3>
+<ul>
+<li>border-color</li>
+</ul>
+<h3 id="border-right-width">border-right-width</h3>
+<ul>
+<li>thin | medium | thick | length</li>
+</ul>
+<h3 id="border-top-width">border-top-width</h3>
+<ul>
+<li>thin | medium | thick | length</li>
+</ul>
+<h3 id="border-break">border-break</h3>
+<ul>
+<li>border-width<br />
+</li>
+<li>border-style<br />
+</li>
+<li>color<br />
+</li>
+<li>close</li>
+</ul>
+<h3 id="border-bottom-color">border-bottom-color</h3>
+<ul>
+<li>border-color</li>
+</ul>
+<h3 id="border-bottom-style">border-bottom-style</h3>
+<ul>
+<li>border-style</li>
+</ul>
+<h3 id="border-left-color">border-left-color</h3>
+<ul>
+<li>border-color</li>
+</ul>
+<h3 id="border-left-width">border-left-width</h3>
+<ul>
+<li>thin | medium | thick length</li>
+</ul>
+<h3 id="border-right-style">border-right-style</h3>
+<ul>
+<li>border-style</li>
+</ul>
+<h3 id="border-top">border-top</h3>
+<ul>
+<li>border-top-width<br />
+</li>
+<li>border-style<br />
+</li>
+<li>border-color</li>
+</ul>
+<h3 id="border-top-color">border-top-color</h3>
+<ul>
+<li>border-color</li>
+</ul>
+<h3 id="border-top-style">border-top-style</h3>
+<ul>
+<li>border-style</li>
+</ul>
+<h3 id="box-shadow">box-shadow</h3>
+<ul>
+<li>inset || [ length, length, length, length || <color> ]<br />
+</li>
+<li>none</li>
+</ul>
+<h3 id="border-collapse">border-collapse</h3>
+<ul>
+<li>collapse | separate</li>
+</ul>
+<h3 id="border-image">border-image</h3>
+<ul>
+<li>image<br />
+</li>
+<li>[ number / % border-width stretch | repeat | round ]<br />
+</li>
+<li>none</li>
+</ul>
+<h3 id="border-right">border-right</h3>
+<ul>
+<li>border-right-width<br />
+</li>
+<li>border-style<br />
+</li>
+<li>border-color</li>
+</ul>
+<h3 id="border-radius">border-radius</h3>
+<ul>
+<li>border-radius<br />
+</li>
+<li>border-top-right-radius<br />
+</li>
+<li>border-bottom-right-radius<br />
+</li>
+<li>border-bottom-left-radius<br />
+</li>
+<li>border-top-left-radius</li>
+</ul>
+<h3 id="border-top-right-radius">border-top-right-radius</h3>
+<ul>
+<li>length</li>
+</ul>
+<h3 id="border-bottom-right-radius">border-bottom-right-radius</h3>
+<ul>
+<li>length</li>
+</ul>
+<h3 id="border-bottom-left-radius">border-bottom-left-radius</h3>
+<ul>
+<li>length</li>
+</ul>
+<hr />
+<h2 id="box-model">Box Model <a href="#top">^</a></h2>
+<h3 id="float">float</h3>
+<ul>
+<li>left | right | none</li>
+</ul>
+<h3 id="height">height</h3>
+<ul>
+<li>auto<br />
+</li>
+<li>length<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="max-height">max-height</h3>
+<ul>
+<li>none<br />
+</li>
+<li>length<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="max-width">max-width</h3>
+<ul>
+<li>none<br />
+</li>
+<li>length%</li>
+</ul>
+<h3 id="min-height">min-height</h3>
+<ul>
+<li>none<br />
+</li>
+<li>length<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="width">width</h3>
+<ul>
+<li>auto<br />
+</li>
+<li>%<br />
+</li>
+<li>length</li>
+</ul>
+<h3 id="margin">margin</h3>
+<ul>
+<li>margin-top<br />
+</li>
+<li>margin-right<br />
+</li>
+<li>margin-bottom<br />
+</li>
+<li>margin-left<br />
+### margin-bottom<br />
+</li>
+<li>auto<br />
+</li>
+<li>length<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="margin-left">margin-left</h3>
+<ul>
+<li>auto<br />
+</li>
+<li>height<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="margin-right">margin-right</h3>
+<ul>
+<li>auto<br />
+</li>
+<li>height<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="margin-top">margin-top</h3>
+<ul>
+<li>auto<br />
+</li>
+<li>length<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="padding">padding</h3>
+<ul>
+<li>padding-top<br />
+</li>
+<li>padding-right<br />
+</li>
+<li>padding-bottom<br />
+</li>
+<li>padding-left<br />
+</li>
+<li>padding-bottom<br />
+</li>
+<li>length<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="padding-left">padding-left</h3>
+<ul>
+<li>length<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="padding-right">padding-right</h3>
+<ul>
+<li>length<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="padding-top">padding-top</h3>
+<ul>
+<li>length<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="display">display</h3>
+<ul>
+<li>none | inline | block | inline-block | flex | inline-flex | grid |<br />
+</li>
+<li>inline-grid | contents | list-item |run-in | compact | table |<br />
+</li>
+<li>inline-table | table-row-group | table-header-group |<br />
+</li>
+<li>table-footer-group | table-row | table-column-group | table-column |<br />
+</li>
+<li>table-cell | table-caption | ruby | ruby-base | ruby-text |<br />
+</li>
+<li>ruby-base-group | ruby-text-group</li>
+</ul>
+<h3 id="overflow">overflow</h3>
+<ul>
+<li>visible | hidden | scroll |<br />
+</li>
+<li>auto | no-display | no-content<br />
+</li>
+<li>overflow-x<br />
+</li>
+<li>overflow-y</li>
+</ul>
+<h3 id="overflow-style">overflow-style</h3>
+<ul>
+<li>auto | marquee-line | marqueeblock</li>
+</ul>
+<h3 id="overflow-x">overflow-x</h3>
+<ul>
+<li>visible | hidden | scroll |<br />
+</li>
+<li>auto | no-display | no-content</li>
+</ul>
+<h3 id="visibility">visibility</h3>
+<ul>
+<li>visible | hidden | collapse</li>
+</ul>
+<h3 id="clear">clear</h3>
+<ul>
+<li>left | right | both | none</li>
+</ul>
+<hr />
+<h2 id="font">Font <a href="#top">^</a></h2>
+<h3 id="font-1">font</h3>
+<ul>
+<li>font-style<br />
+</li>
+<li>font-variant<br />
+</li>
+<li>font-weight<br />
+</li>
+<li>font-size/line-height<br />
+</li>
+<li>font-family<br />
+</li>
+<li>caption | icon | menu | messagebox | small-caption | status-bar</li>
+</ul>
+<h3 id="font-size-adjust">font-size-adjust</h3>
+<ul>
+<li>none | inherit<br />
+</li>
+<li>number</li>
+</ul>
+<h3 id="font-family">font-family</h3>
+<ul>
+<li>serif | sans-serif | Font Name</li>
+</ul>
+<h3 id="font-style">font-style</h3>
+<ul>
+<li>normal | italic | oblique | inherit</li>
+</ul>
+<h3 id="font-variant">font-variant</h3>
+<ul>
+<li>normal | small-caps | inherit</li>
+</ul>
+<h3 id="font-size">font-size</h3>
+<ul>
+<li>xx-small | x-small | small | medium | large | x-large | xxlarge |<br />
+</li>
+<li>smaller | larger |<br />
+</li>
+<li>inherit<br />
+</li>
+<li>length<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="font-weight">font-weight</h3>
+<ul>
+<li><p>normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 |<br />
+</p></li>
+<li><p>700 | 800 | 900 | inherit</p></li>
+<li><hr /></li>
+</ul>
+<h2 id="text">Text <a href="#top">^</a></h2>
+<h3 id="direction">direction</h3>
+<ul>
+<li>ltr | rtl | inherit</li>
+</ul>
+<h3 id="hanging-punctuation">hanging-punctuation</h3>
+<ul>
+<li>none | [ start | end | endedge ]</li>
+</ul>
+<h3 id="letter-spacing">letter-spacing</h3>
+<ul>
+<li>normal<br />
+</li>
+<li>length<br />
+</li>
+<li>%<br />
+</li>
+<li><h3 id="text-outline">text-outline</h3></li>
+<li>none<br />
+</li>
+<li>color<br />
+</li>
+<li>length</li>
+</ul>
+<h3 id="unicode-bidi">unicode-bidi</h3>
+<ul>
+<li>normal | embed | bidi-override</li>
+</ul>
+<h3 id="white-space">white-space</h3>
+<ul>
+<li>normal | pre | nowrap | pre-wrap | pre-line</li>
+</ul>
+<h3 id="white-space-collapse">white-space-collapse</h3>
+<ul>
+<li>perserve | collapse | pre-servebreaks | discard</li>
+</ul>
+<h3 id="punctuation-trim">punctuation-trim</h3>
+<ul>
+<li>none | [ start | end | adjacent ]</li>
+</ul>
+<h3 id="text-align">text-align</h3>
+<ul>
+<li>start | end | left | right | center | justify</li>
+</ul>
+<h3 id="text-align-last">text-align-last</h3>
+<ul>
+<li>start | end | left | right | center | justify</li>
+</ul>
+<h3 id="text-decoration">text-decoration</h3>
+<ul>
+<li>none | underline | overline | line-thorugh | blink</li>
+</ul>
+<h3 id="text-shadow">text-shadow</h3>
+<ul>
+<li>none<br />
+</li>
+<li>color<br />
+</li>
+<li>length</li>
+</ul>
+<h3 id="word-break">word-break</h3>
+<ul>
+<li>normal | keep-all | loose | break-strict | break-all</li>
+</ul>
+<h3 id="word-wrap">word-wrap</h3>
+<ul>
+<li>normal<br />
+</li>
+<li>nowrap</li>
+</ul>
+<h3 id="text-emphasis">text-emphasis</h3>
+<ul>
+<li>none | [ [ accent | dot | circle | disc | [ before | after ]?]</li>
+</ul>
+<h3 id="text-indent">text-indent</h3>
+<ul>
+<li>length<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="text-justify">text-justify</h3>
+<ul>
+<li>auto | inter-word | interideograph | inter-cluster | distribute |<br />
+</li>
+<li>kashida | tibetan</li>
+</ul>
+<h3 id="text-transform">text-transform</h3>
+<ul>
+<li>none | capitalize | uppercase | lowercase</li>
+</ul>
+<h3 id="text-wrap">text-wrap</h3>
+<ul>
+<li>normal | unresrricted | none | suppress</li>
+</ul>
+<h3 id="word-spacing">word-spacing</h3>
+<ul>
+<li>normal<br />
+</li>
+<li>length<br />
+</li>
+<li>%</li>
+</ul>
+<hr />
+<h2 id="column">Column <a href="#top">^</a></h2>
+<h3 id="column-count">column-count</h3>
+<ul>
+<li>auto<br />
+</li>
+<li>number</li>
+</ul>
+<h3 id="column-fill">column-fill</h3>
+<ul>
+<li>auto | balance</li>
+</ul>
+<h3 id="column-gap">column-gap</h3>
+<ul>
+<li>normal<br />
+</li>
+<li>length</li>
+</ul>
+<h3 id="column-rule">column-rule</h3>
+<ul>
+<li>column-rule-width</li>
+</ul>
+<h3 id="column-rule-style">column-rule-style</h3>
+<ul>
+<li>column-rule-color</li>
+</ul>
+<h3 id="column-rule-style-1">column-rule-style</h3>
+<ul>
+<li>border-style</li>
+</ul>
+<h3 id="columns">columns</h3>
+<ul>
+<li>column-width<br />
+</li>
+<li>column-count</li>
+</ul>
+<h3 id="column-rule-width">column-rule-width</h3>
+<ul>
+<li>thin | medium | thick<br />
+</li>
+<li>length</li>
+</ul>
+<h3 id="column-span">column-span</h3>
+<ul>
+<li>1 | all</li>
+</ul>
+<h3 id="column-width">column-width</h3>
+<ul>
+<li>auto<br />
+</li>
+<li>length</li>
+</ul>
+<hr />
+<h2 id="colors">Colors <a href="#top">^</a></h2>
+<h3 id="color">color</h3>
+<ul>
+<li>inherit<br />
+</li>
+<li>color</li>
+</ul>
+<h3 id="opacity">opacity</h3>
+<ul>
+<li>inherit<br />
+</li>
+<li>number</li>
+</ul>
+<hr />
+<h2 id="table">Table <a href="#top">^</a></h2>
+<h3 id="border-collapse-1">border-collapse</h3>
+<ul>
+<li>collapse | separate</li>
+</ul>
+<h3 id="empty-cells">empty-cells</h3>
+<ul>
+<li>show | hide</li>
+</ul>
+<h3 id="border-spacing">border-spacing</h3>
+<ul>
+<li>length length</li>
+</ul>
+<h3 id="table-layout">table-layout</h3>
+<ul>
+<li>auto | fixed</li>
+</ul>
+<h3 id="caption-side">caption-side</h3>
+<ul>
+<li>top | bottom | left | right</li>
+</ul>
+<hr />
+<h2 id="speech">Speech <a href="#top">^</a></h2>
+<h3 id="cue">cue</h3>
+<ul>
+<li>cue-before<br />
+</li>
+<li>cue-after</li>
+</ul>
+<h3 id="cue-before">cue-before</h3>
+<ul>
+<li>url [ silent | x-soft | soft | medium | loud | x-loud | none | inherit ]<br />
+</li>
+<li>number<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="mark">mark</h3>
+<ul>
+<li>mark-before<br />
+</li>
+<li>mark-after</li>
+</ul>
+<h3 id="mark-before">mark-before</h3>
+<ul>
+<li>string</li>
+</ul>
+<h3 id="mark-after">mark-after</h3>
+<ul>
+<li>string</li>
+</ul>
+<h3 id="voice-pitch-range">voice-pitch-range</h3>
+<ul>
+<li>x-low | low | medium | high | xhigh | inherit<br />
+</li>
+<li>number</li>
+</ul>
+<h3 id="voice-stress">voice-stress</h3>
+<ul>
+<li>strong | moderate | none | reduced | inherit</li>
+</ul>
+<h3 id="voice-volume">voice-volume</h3>
+<ul>
+<li>silent | x-soft | soft | medium | loud | x-loud | inherit<br />
+</li>
+<li>number<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="cue-after">cue-after</h3>
+<ul>
+<li>url [ silent | x-soft | soft | medium | loud | x-loud | none | inherit<br />
+</li>
+<li>]<br />
+</li>
+<li>number<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="pause">pause</h3>
+<ul>
+<li>pause-before<br />
+</li>
+<li>pause-after</li>
+</ul>
+<h3 id="pause-before">pause-before</h3>
+<ul>
+<li>none | x-weak | weak | medium | strong | x-strong | inherit<br />
+</li>
+<li>time</li>
+</ul>
+<h3 id="phonemes">phonemes</h3>
+<ul>
+<li>string</li>
+</ul>
+<h3 id="voice-duration">voice-duration</h3>
+<ul>
+<li>time</li>
+</ul>
+<h3 id="voice-family">voice-family</h3>
+<ul>
+<li>inherit | [ &lt;specific-voice, age, generic-voice, number&gt; ]</li>
+</ul>
+<h3 id="voice-rate">voice-rate</h3>
+<ul>
+<li>x-slow | slow | medium | fast | x-fast | inherit<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="voice-pitch">voice-pitch</h3>
+<ul>
+<li>x-low | low | medium | high | xhigh | inherit<br />
+</li>
+<li>number<br />
+</li>
+<li>%</li>
+</ul>
+<h3 id="caption-side-1">caption-side</h3>
+<ul>
+<li>top | bottom | left | right</li>
+</ul>
+<h3 id="rest">rest</h3>
+<ul>
+<li>rest-before<br />
+</li>
+<li>rest-after</li>
+</ul>
+<h3 id="rest-before">rest-before</h3>
+<ul>
+<li>none | x-weak | weak | medium | strong | x-strong | inherit<br />
+</li>
+<li>time</li>
+</ul>
+<h3 id="rest-after">rest-after</h3>
+<ul>
+<li>none | x-weak | weak | medium | strong | x-strong | inherit<br />
+</li>
+<li>time</li>
+</ul>
+<h3 id="speak">speak</h3>
+<ul>
+<li>none | normal | spell-out | digits | literal-punctuation |<br />
+</li>
+<li>no-punctuation | inherit-number</li>
+</ul>
+<hr />
+<h2 id="list-markers">List &amp; Markers <a href="#top">^</a></h2>
+<h3 id="list-style">list-style</h3>
+<ul>
+<li>list-style-type<br />
+</li>
+<li>list-style-position<br />
+</li>
+<li>list-style-image</li>
+</ul>
+<h3 id="list-style-image">list-style-image</h3>
+<ul>
+<li>none<br />
+</li>
+<li>url</li>
+</ul>
+<h3 id="list-style-type">list-style-type</h3>
+<ul>
+<li>none | asterisks | box | check | circle | diamond | disc | hyphen |<br />
+</li>
+<li>square | decimal | decimalleading-zero | lower-roman | upper-roman |<br />
+</li>
+<li>lower-alpha | upper-alpha | lower-greek | lower-latin | upper-latin |<br />
+</li>
+<li>hebrew | armenian | georgian | cjk-ideographic | hiragana | katakana |<br />
+</li>
+<li>hiragana-iroha | katakana-iroha | footnotes</li>
+</ul>
+<h3 id="marker-offset">marker-offset</h3>
+<ul>
+<li>auto<br />
+</li>
+<li>length</li>
+</ul>
+<hr />
+<h2 id="animations">Animations <a href="#top">^</a></h2>
+<h3 id="animations-1">animations</h3>
+<ul>
+<li>animation-name<br />
+</li>
+<li>animation-duration<br />
+</li>
+<li>animation-timing-function<br />
+</li>
+<li>animation-delay<br />
+</li>
+<li>animation-iteration-count<br />
+</li>
+<li>animation-direction</li>
+</ul>
+<h3 id="animation-name">animation-name</h3>
+<ul>
+<li>none | IDENT</li>
+</ul>
+<h3 id="animation-duration">animation-duration</h3>
+<ul>
+<li>time</li>
+</ul>
+<h3 id="animation-timing-function">animation-timing-function</h3>
+<ul>
+<li>ease | linear | ease-in | easeout | ease-in-out | cubic-Bezier<br />
+</li>
+<li>(number, number, number, number)</li>
+</ul>
+<h3 id="animation-delay">animation-delay</h3>
+<ul>
+<li>time</li>
+</ul>
+<h3 id="animation-iteration-count">animation-iteration-count</h3>
+<ul>
+<li>inherit<br />
+</li>
+<li>number</li>
+</ul>
+<h3 id="animation-direction">animation-direction</h3>
+<ul>
+<li>normal | alternate</li>
+</ul>
+<h3 id="animation-play-state">animation-play-state</h3>
+<ul>
+<li>running | paused</li>
+</ul>
+<h3 id="rotation">rotation</h3>
+<ul>
+<li>angle<br />
+</li>
+<li>rotation-point<br />
+</li>
+<li>position (paired value off-set)</li>
+</ul>
+<hr />
+<h2 id="transitions">Transitions <a href="#top">^</a></h2>
+<h3 id="transitions-1">transitions</h3>
+<ul>
+<li>transitions-property<br />
+</li>
+<li>transitions-duration<br />
+</li>
+<li>transitions-timing-function<br />
+</li>
+<li>transitions-delay</li>
+</ul>
+<h3 id="transitions-delay">transitions-delay</h3>
+<ul>
+<li>time</li>
+</ul>
+<h3 id="transitions-duration">transitions-duration</h3>
+<ul>
+<li>time</li>
+</ul>
+<h3 id="transitions-property">transitions-property</h3>
+<ul>
+<li>none | all</li>
+</ul>
+<h3 id="transition-timing-function">transition-timing-function</h3>
+<ul>
+<li>ease | linear | ease-in | ease-out | ease-in-out | cubicBezier(<br />
+</li>
+<li>number, number, number, number)</li>
+</ul>
+<hr />
+<h2 id="ui">UI <a href="#top">^</a></h2>
+<h3 id="appearance">appearance</h3>
+<ul>
+<li>normal | inherit | [icon | window | desktop | work-space | document |<br />
+</li>
+<li>tooltip | dialog | button | push-button | hyperlink | radio-button |<br />
+</li>
+<li>checkbox | menu-item | tab | menu | menubar | pull-down-menu |<br />
+</li>
+<li>pop-up-menu | list-menu | radio-group | checkbox-group | outline-tree<br />
+</li>
+<li><div class="line-block">range | field | combo-box | signature | password]</div></li>
+</ul>
+<h3 id="cursor">cursor</h3>
+<ul>
+<li>auto | crosshair | default | pointer | move | e-resize | neresize |<br />
+</li>
+<li>nw-resize | n-resize | se-resize | sw-resize | swresize | s-resize |<br />
+</li>
+<li>w-resize | text | wait | help<br />
+</li>
+<li>url</li>
+</ul>
+<h3 id="icon">icon</h3>
+<ul>
+<li>auto | inherit<br />
+</li>
+<li>url</li>
+</ul>
+<h3 id="nav-index">nav-index</h3>
+<ul>
+<li>auto | inherit<br />
+</li>
+<li>number</li>
+</ul>
+<h3 id="nav-up">nav-up</h3>
+<ul>
+<li>auto | inherit &lt;id&gt; [current | root | &lt;target-name&gt;</li>
+</ul>
+<h3 id="nav-right">nav-right</h3>
+<ul>
+<li>auto | inherit &lt;id&gt; [current | root | &lt;target-name&gt;</li>
+</ul>
+<h3 id="nav-down">nav-down</h3>
+<ul>
+<li>auto | inherit &lt;id&gt; [current | root | &lt;target-name&gt;</li>
+</ul>
+<h3 id="nav-left">nav-left</h3>
+<ul>
+<li>auto | inherit &lt;id&gt; [current |<br />
+</li>
+<li>root | &lt;target-name&gt;</li>
+</ul>
+<h3 id="resize">resize</h3>
+<ul>
+<li>none | both | horizontal |<br />
+</li>
+<li>vertical | inherit</li>
+</ul>
+<hr />
+<h2 id="pseudo-class">Pseudo-Class <a href="#top">^</a></h2>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">:active</td>
+<td>an activated element</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">:focus</td>
+<td>an element while the element has focus</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">:hover</td>
+<td>an element when you mouse over it</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">:link</td>
+<td>an unvisited link</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">:disabled</td>
+<td>an element while the element is disabled</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">:enabled</td>
+<td>an element while the element is enabled</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">:checked</td>
+<td>an element that is checked</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">:selection</td>
+<td>an element that is currently selected or highlighted by the user</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">:lang</td>
+<td>allows the author to specify a language to use in a specified element</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">:nth-child(n)</td>
+<td>an element that is the n-th sibling</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">:nth-last-child(n)</td>
+<td>an element that is the n-th sibling counting from the last sibling</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">:first-child</td>
+<td>an element that is the first sibling</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">:last-child</td>
+<td>an element that is the last sibling</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">:only-child</td>
+<td>an element that is the only child</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">:nth-of-type(n)</td>
+<td>an element that is the n-th sibling of its type</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">:nth-last-of-type(n)</td>
+<td>an element that is the n-th sibling of its type counting from the last sibling</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">:last-of-type</td>
+<td>an element that is the last sibling of its type</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">:first-of-type</td>
+<td>an element that is the first sibling of its type</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">:only-of-type</td>
+<td>an element that is the only child of its type</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">:empty</td>
+<td>an element that has no children</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">:root</td>
+<td>root element within the document</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">:not(x)</td>
+<td>an element not represented by the argument x</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">:target</td>
+<td>a target element as specified by a target in a UR</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pseudo-element">Pseudo-Element <a href="#top">^</a></h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">::first-letter</td>
+<td>Adds special style to the first letter of a text</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">::first-line</td>
+<td>Adds special style to the first line of a text</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">::before</td>
+<td>Inserts some content before the content of an element</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">::after</td>
+<td>Inserts some content after the content of an element</td>
+</tr>
+</tbody>
+</table>
+<h2 id="absolute-measurement">Absolute Measurement <a href="#top">^</a></h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">%</td>
+<td>percentage</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">cm</td>
+<td>centimeter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">in</td>
+<td>inch</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">mm</td>
+<td>milimeter</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">pc</td>
+<td>pica (1p = 12 points)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">pt</td>
+<td>point (1pt = 1/72 inch)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">px</td>
+<td>pixel (1px = 1/96 inch)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relative-measurement">Relative Measurement <a href="#top">^</a></h2>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">ch</td>
+<td>width of the 0 glyph found in the font for the font size used to render</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">em</td>
+<td>1em = current font size of current element</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">ex</td>
+<td>x-height of the elements font</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">gd</td>
+<td>the grid defined by layout-grid</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">rem</td>
+<td>the font size of the root element</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">vh</td>
+<td>the viewports height</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">vw</td>
+<td>the viewport’s width</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">vm</td>
+<td>viewports height or width, whichever is smaller of the two</td>
+</tr>
+</tbody>
+</table>
+<h2 id="angles">Angles <a href="#top">^</a></h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">deg</td>
+<td>degrees</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">grad</td>
+<td>grads</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">rad</td>
+<td>radians</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">turn</td>
+<td>turns</td>
+</tr>
+</tbody>
+</table>
+<h2 id="time">Time <a href="#top">^</a></h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">ms</td>
+<td>mili-seconds</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">s</td>
+<td>seconds</td>
+</tr>
+</tbody>
+</table>
+<h2 id="frequency">Frequency <a href="#top">^</a></h2>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Hz</td>
+<td>hertz</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">kHz</td>
+<td>kilo-hertz</td>
+</tr>
+</tbody>
+</table>
+<h2 id="colors-1">Colors <a href="#top">^</a></h2>
+<table>
+<colgroup>
+<col style="width: 40%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Element</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">color name</td>
+<td>red, blue, green, dark green</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">rgb(x,y,z)</td>
+<td>red = rgb(255,0,0)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">rgb(x%,y%,z%)</td>
+<td>red = rgb(100%,0,0)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">rgba(x,y,z,alpha)</td>
+<td>red = rgba(255,0,0,0)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">#rrggbb</td>
+<td>red = #ff0000 (or shorthand - #f00)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">hsl(hue,saturation,lightness)</td>
+<td>red = hsl (0, 100%, 50%)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">flavor</td>
+<td>An accent color (typically chosen by the user) to customize the user interface of the user agent itself.</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">currentColor</td>
+<td>computer value of the currentColor keyword is the computed value of the color property</td>
+</tr>
+</tbody>
+</table>
+</article>
+
+<footer>
+  <hr>
+  <p> Generated with a modified version of <a href="https://github.com/fmash16/ssg5">ssg5</a> By fmash16 <br /> 
+  <i class="far fa-copyright"></i> 2020-2021 </p>
+</footer>
+</body>

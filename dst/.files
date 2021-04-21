@@ -3,9 +3,13 @@
 ./favicon.png
 ./about.md
 ./index.html
+./posts/games/color_game.html
+./posts/games/colorGame.js
+./posts/games/colorGame.css
 ./posts/general/curl_tips.md
 ./posts/general/first_post.md
 ./posts/general/picture.jpg
 ./posts/general/https_site.md
 ./posts/general/favicon.png
+./posts/general/css_site.md
 ./posts/general/linux.jpg

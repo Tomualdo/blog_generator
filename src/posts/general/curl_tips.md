@@ -100,7 +100,7 @@ Although cURL can be used with many different protocols, during its lifetime HTT
 	  _represented by following fields (read from left-to-right):_  
 
 	  | domain | flag | path |secure | expiration | name | value |
-	  | :------: | :------: | :------: | :-----------: | :------: | :------: | :------: |
+	  | :------------: | :------: | :------: | :--------------------: | :-------------: | :-----------: | :------------: |
 	  | .netscape.com | | | TRUE /  FALSE | 946684799 | NETSCAPE_ID | 100103 |
 	
 11. Just `download` the file.
